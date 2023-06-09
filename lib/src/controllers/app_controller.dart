@@ -16,6 +16,13 @@ final class AppController extends AbstractController {
   @override
   void save() async {}
 
+  bool _isOnline = true;
+  bool get isOnline => _isOnline;
+  set isOnline(bool value) {
+    _isOnline = value;
+    notifyListeners();
+  }
+
   String _selectedDuration = 'This Week';
   String get selectedDuration => _selectedDuration;
   set selectedDuration(String value) {
