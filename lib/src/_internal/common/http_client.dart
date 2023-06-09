@@ -24,6 +24,13 @@ class HttpClient {
     });
   }
 
+  static Future<HttpResponse> head(String url,
+      {Map<String, String>? headers}) async {
+    return await _request(() async {
+      return await http.head(Uri.parse(url), headers: headers);
+    });
+  }
+
   static Future<HttpResponse> post(
     String url, {
     Map<String, String>? headers,
