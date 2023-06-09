@@ -12,10 +12,6 @@ class LoginCommand extends AbstractCommand {
 
   @override
   Future<void> execute() async {
-    if (!appController.isOnline) {
-      ShortMessage.showMessage(message: "Check your internet connection!");
-      return;
-    }
     var loginForm = authController.loginFormKey;
     debugPrint('[DATA] ${authController.loginData}');
     if (loginForm.currentState!.validate()) {
