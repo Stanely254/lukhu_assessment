@@ -12,7 +12,7 @@ class CheckConnectionCommand extends AbstractCommand
     int wait = 3,
   ]) async {
     String url = "https://google.com";
-    appController.isOnline = (await HttpClient.get(url)).success;
+    appController.isOnline = (await HttpClient.head(url)).success;
     debugPrint('[ONLINE] ${appController.isOnline}');
     if (repeat) {
       Future.delayed(Duration(seconds: wait)).then((value) {
